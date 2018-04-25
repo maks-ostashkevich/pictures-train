@@ -40,7 +40,7 @@ df['votedon'] = df['votedon'].apply(dates_interval)
 # """
 
 # df.sort(['c1','c2'], ascending=[False,True])
-df = df.sort_values(by=['viewed'], ascending=[True])
+df = df.sort_values(by=['votedon'], ascending=[True])
 # sort(['votedon'], ascending=[True])
 
 x = df.iloc[:, [3, 5, 6, 7]] # 3,
@@ -65,7 +65,7 @@ skm.fit(x, y)
 print(skm.intercept_, skm.coef_)
 """
 
-plt = ggp.ggplot(aes(x="n_comments", y="y"), data=x_) + geom_point()
+plt = ggp.ggplot(aes(x="votes", y="y"), data=x_) + geom_point()
 
 plt.show()
 
